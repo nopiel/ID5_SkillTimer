@@ -41,21 +41,9 @@ div {
 }
 .countdownArea{
     font-size:4em;
-}
-.skillCount1{
-
     height:200px;
 }
 
-.skillCount2{
-
-    height:200px;
-}
-
-.skillCount3{
-
-    height:200px;
-}
 @media screen and (max-width: 480px){
     #container{
         padding:0 !important;
@@ -75,20 +63,8 @@ div {
         color: #e22e5e;
     }
     .countdownArea{
-        font-size:4em;
-    }
-    .skillCount1{
-
-        height:200px;
+        font-size:12vh;
+        height:20vh
     }
 
-    .skillCount2{
-
-        height:200px;
-    }
-
-    .skillCount3{
-
-        height:200px;
-    }
 }
