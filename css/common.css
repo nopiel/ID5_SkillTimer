@@ -52,11 +52,12 @@ div {
         font-size: 1.5em;
         border: 5px solid #028ebd;
         width: -webkit-calc(100% - 4rem);
-        margin: 2rem auto;
+        margin: 1.5vh auto;
         display: block;
         max-width: 100%;
         padding: 2%;
         box-sizing: border-box;
+        height: 29vh;
     }
     .active{
         border:5px solid #e22e5e;
