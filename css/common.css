@@ -1,0 +1,58 @@
+﻿@charset "utf-8";
+
+body {
+	font-size: 16px;
+	line-height: 140%;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #028ebd;
+	text-align: center;
+}
+
+a:link { text-decoration:none; color: #000;}
+a:visited { text-decoration:none; color: #000;}
+a:active { text-decoration:none; color: #000;}
+a:hover { text-decoration:none; color: #000;}
+
+#container {
+	margin: 0 auto;
+	padding: 100px 0;
+	width: 100%;
+	text-align: center;
+}
+
+div {
+	font-weight: bold;
+	line-height: 1.2em;
+}
+.skillarea{
+    font-size:1.5em;
+    margin: 0 0 20px;
+    border:5px solid #028ebd;
+    width:42%;
+    display: inline-block;
+    margin: 0 2% 20px;
+    max-width:400px;
+    padding:2%;
+    box-sizing: border-box;
+}
+.active{
+    border:5px solid #e22e5e;
+    color: #e22e5e;
+}
+.countdownArea{
+    font-size:4em;
+}
+.skillCount1{
+
+    height:200px;
+}
+
+.skillCount2{
+
+    height:200px;
+}
+
+.skillCount3{
+
+    height:200px;
+}
