@@ -2,61 +2,13 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>jQuery Number CountUP</title>
+<meta name="viewport" content="width=device-width,initial-scale=0.3,minimum-scale=0.3,maximum-scale=1.0">
+<title>IdentityV-第五人格- スキルタイマー</title>
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/common.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script>
 $(function(){
-/*
-	var countElm = $('.skillCount1'),
-	countSpeed = 1000;
-
-    $('.countdownArea').on('click',function(){
-       if($(this).hasClass('active')) {
-            countdown(1);
-           $(this).text($(this).attr('data-num'));
-           $(this).removeClass('active');
-       }else{
-           countdown(0);
-           $(this).addClass('active');
-
-
-       }
-
-    });
-
-    function countdown(flg){
-
-            var self = countElm,
-            countMax = self.attr('data-num'),
-            thisCount = self.text(),
-            countTimer;
-
-        if(flg==1){
-            clearInterval(countTimer);
-             console.log("a")
-        }
-        else{
-            timer();
-        }
-
-
-        function timer(){
-
-                countTimer = setInterval(function(){
-                    var countNext = thisCount=thisCount-1;
-                    self.text(countNext);
-
-                    if(countNext == 0){
-
-                        clearInterval(countTimer);
-                    }
-                },countSpeed);
-            }
-        }
-*/
-
 
 var init = [],
 countTimer = [],
@@ -66,7 +18,7 @@ $(".skillarea").each(function(i){
 	init[i] = $(".countdownArea",this).data("num");
 });
 $(".skillarea").click(function(){
-  a($(".skillarea").index($(this)));
+    skilltimer($(".skillarea").index($(this)));
 });
 
 
@@ -84,14 +36,13 @@ $(window).keydown(function(e){
     case 99:
       i = 2;
     break;
-    case 100:
-      i = 3;
-    break;
+      default:
+     i=100;
   }
-   a(i);
+    skilltimer(i);
 });
 
-function a(i){
+function skilltimer(i){
   var _self = $(".countdownArea").eq(i);
   	if($(".skillarea").eq(i).hasClass("active")){
   		counterClear(i);
