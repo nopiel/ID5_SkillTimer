@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 body {
 	font-size: 16px;
@@ -55,4 +55,40 @@ div {
 .skillCount3{
 
     height:200px;
+}
+@media screen and (max-width: 768px){
+    #container{
+        padding:0 !important;
+    }
+    .skillarea{
+        font-size: 1.5em;
+        border: 5px solid #028ebd;
+        width: -webkit-calc(100% - 4rem);
+        margin: 2rem auto;
+        display: block;
+        max-width: 100%;
+        padding: 2%;
+        box-sizing: border-box;
+    }
+    .active{
+        border:5px solid #e22e5e;
+        color: #e22e5e;
+    }
+    .countdownArea{
+        font-size:4em;
+    }
+    .skillCount1{
+
+        height:200px;
+    }
+
+    .skillCount2{
+
+        height:200px;
+    }
+
+    .skillCount3{
+
+        height:200px;
+    }
 }
