@@ -8,73 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/common.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script>
-$(function(){
-
-var init = [],
-countTimer = [],
-activeCounter = [];
-
-$(".skillarea").each(function(i){
-	init[i] = $(".countdownArea",this).data("num");
-});
-$(".skillarea").click(function(){
-    skilltimer($(".skillarea").index($(this)));
-});
-
-
-
-
-$(window).keydown(function(e){
-  var i = 0;
-  switch(e.keyCode){
-    case 97:
-    case 49:
-      i = 0;
-    break;
-    case 98:
-    case 50:
-      i = 1;
-    break;
-    case 99:
-    case 51:
-      i = 2;
-    break;
-      default:
-     i=100;
-  }
-    skilltimer(i);
-});
-
-function skilltimer(i){
-  var _self = $(".countdownArea").eq(i);
-  	if($(".skillarea").eq(i).hasClass("active")){
-  		counterClear(i);
-  	}else{
-  		countTimer[i] = setInterval(function(){
-
-              var next = _self.text() - 1;
-  			_self.text(next);
-              if(next <= 0) counterClear(i);
-
-  		},1000);
-      $(".skillarea").eq(i).addClass("active");
-  	}
-//  	$(".skillarea").eq(i).toggleClass("active");
-}
-
-
-
-
-function counterClear(i){
-	clearInterval(countTimer[i]);
-	$(".countdownArea").eq(i).text(init[i]);
-    $(".skillarea").eq(i).removeClass('active');
-}
-
-
-});
-</script>
+<script src="js/main.js"></script>
 </head>
 
 <body>
@@ -94,9 +28,9 @@ function counterClear(i){
 </header>
 <div id="container">
 
-<div class="skillarea">
+<div class="skillarea onHover">
     引き留める
-    <div class="skillCount1 countdownArea" data-num="120">120</div>
+    <div class="skillCount0 countdownArea" data-num="120">120</div>
     <svg 
          class="skillicon"
          xmlns="http://www.w3.org/2000/svg"
@@ -111,45 +45,46 @@ function counterClear(i){
     </svg>
 </div>
 
-<div class="skillarea">
+<div class="skillarea onHover">
     瞬間移動
-    <div class="skillCount2 countdownArea" data-num="100">100</div>
-    <svg class="skillicon"
-         xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 58 58">
-       
-        <path fill-rule="evenodd" 
-              d="M14.000,16.000 C14.000,16.000 9.500,20.833 6.000,13.000 C2.500,5.167 11.833,5.833 13.000,8.000 C14.167,10.167 15.000,12.000 15.000,12.000 C15.000,12.000 20.667,11.667 27.000,15.000 C29.500,18.333 27.000,18.000 27.000,18.000 L24.000,18.000 C24.000,18.000 26.000,27.000 27.000,29.000 C28.000,31.000 27.667,32.500 27.000,34.000 C31.000,34.833 31.000,37.000 31.000,37.000 L30.000,42.000 C30.000,42.000 25.333,42.167 23.000,34.000 C20.500,37.667 15.000,39.000 15.000,39.000 C15.000,39.000 12.833,49.167 12.000,51.000 C11.167,52.833 9.167,56.500 8.000,58.000 C5.500,57.000 1.000,53.000 1.000,53.000 L6.000,53.000 C6.000,53.000 7.500,36.333 10.000,35.000 C12.000,32.333 18.000,31.000 18.000,31.000 L14.000,26.000 L9.000,32.000 L-0.000,24.000 C-0.000,24.000 -0.167,21.667 1.000,21.000 C2.167,20.333 3.000,23.000 3.000,23.000 L8.000,28.000 L14.000,16.000 Z"/>
-        <path fill-rule="evenodd" 
-              d="M17.000,12.000 C17.000,12.000 18.667,-0.333 25.000,-0.000 C31.333,0.333 36.500,10.000 37.000,26.000 C37.500,42.000 35.500,51.667 29.000,52.000 C22.500,52.333 18.667,36.833 19.000,35.000 C19.333,33.167 21.000,36.000 21.000,36.000 C21.000,36.000 23.333,48.500 29.000,47.000 C34.667,45.500 33.000,29.500 33.000,25.000 C33.000,20.500 30.333,5.667 24.000,5.000 C18.000,5.333 19.000,14.000 19.000,14.000 L17.000,15.000 L17.000,12.000 Z"/>
-        <path fill-rule="evenodd" 
-              d="M40.000,15.000 L39.000,25.000 L51.000,20.000 L54.000,20.000 C54.000,20.000 55.833,23.333 51.000,24.000 C49.833,26.000 51.000,26.000 51.000,26.000 C51.000,26.000 55.833,25.667 57.000,22.000 C57.833,18.333 58.333,5.167 52.000,6.000 C47.833,8.167 49.000,10.000 49.000,10.000 L51.000,11.000 C51.000,11.000 49.667,8.667 52.000,8.000 C53.530,7.563 54.558,10.636 54.944,13.415 C55.147,14.875 55.172,16.254 55.000,17.000 C52.500,18.500 51.000,17.000 51.000,17.000 L53.000,12.000 L45.000,16.000 L40.000,15.000 Z"/>
-      
-            </svg>
+    <div class="skillCount1 countdownArea" data-num="100">100</div>
+    
+    <img id="skillIcon1" class="skillicon" src="res/icon1.png">
 </div>
 
-<div class="skillarea">
+<div class="skillarea onHover">
     神出鬼没
-    <div class="skillCount3 countdownArea" data-num="150">150</div>
-    <svg 
-         class="skillicon"
-         xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         viewBox="0 0 58 58">
-        
-            <path fill-rule="evenodd"
-                  d="M11.000,15.000 C11.000,15.000 7.000,11.600 10.000,8.000 C13.000,4.400 20.000,5.600 22.000,7.000 C27.200,7.000 32.000,9.000 32.000,9.000 L22.000,10.000 C22.000,10.000 18.400,12.800 22.000,13.000 C27.600,12.800 35.000,17.000 35.000,17.000 L28.000,18.000 L29.000,19.000 L45.000,24.000 L29.000,24.000 C29.000,24.000 37.000,31.200 37.000,34.000 C37.000,36.800 37.000,43.000 37.000,43.000 L51.000,60.000 L49.000,61.000 L27.000,39.000 L16.000,36.000 L21.000,45.000 C21.000,45.000 14.400,50.800 14.000,51.000 C13.600,51.200 12.000,50.000 12.000,50.000 L16.000,44.000 L5.000,28.000 L19.000,29.000 L4.000,17.000 L11.000,15.000 Z"/>
-            <path fill-rule="evenodd" 
-                  d="M50.532,42.555 C50.532,42.555 49.085,41.266 50.170,39.901 C51.255,38.535 53.787,38.991 54.511,39.521 C56.391,39.521 58.128,40.280 58.128,40.280 L54.511,40.659 C54.511,40.659 53.209,41.721 54.511,41.797 C56.536,41.721 59.213,43.314 59.213,43.314 L56.681,43.693 L57.043,44.072 L62.830,45.968 L57.043,45.968 C57.043,45.968 59.936,48.699 59.936,49.761 C59.936,50.823 59.936,53.174 59.936,53.174 L65.000,59.621 L64.277,60.000 L56.319,51.657 L52.340,50.519 L54.149,53.932 C54.149,53.932 51.762,56.132 51.617,56.208 C51.472,56.284 50.894,55.828 50.894,55.828 L52.340,53.553 L48.362,47.485 L53.426,47.865 L48.000,43.314 L50.532,42.555 Z"/>
-            <path fill-rule="evenodd" 
-                  d="M66.000,46.000 L39.000,-0.000 L39.000,7.000 L66.000,46.000 Z"/>
-            <path fill-rule="evenodd" 
-                  d="M56.000,65.000 L-0.000,57.000 L7.000,54.000 L56.000,65.000 Z"/>
-        
-    </svg>
+    <div class="skillCount2 countdownArea" data-num="150">150</div>
+    
+    <img id="skillIcon2" class="skillicon" src="res/icon2.png">
 </div>
-</div><!-- /#container -->
+
+<div class="skillarea onHover">
+    興奮
+    <div class="skillCount3 countdownArea" data-num="100">100</div>
+  
+    <img id="skillIcon3" class="skillicon" src="res/icon3.png">
+</div>
+
+<div class='skillarea'>
+    推進器
+    <div class="skillCount4 countdownArea">0</div>
+
+    <div id="skill4add" class="skillButton onHover" style="bottom: 5px; left: 5px;">+</div>
+    <div id="skill4minus" class="skillButton onHover" style="bottom: 5px; left: 40px;">-</div> 
+    <div id="skill4clear" class="skillButton onHover" style="bottom: 5px; left: 75px;">C</div>
+
+    <img id="skillIcon4" class="skillicon" src="res/icon4.png">
+</div>
+
+<!-- <div class='skillarea'>
+
+    <div class="skillCount5 countdownArea">0</div>
+
+    <img id="skillIcon5" class="skillicon" src="res/icon5.png">
+</div> -->
+
+</div> <!-- /#container -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123261014-1"></script>
