@@ -44,6 +44,12 @@ display:inline-block;
     top: 0.8rem;
     right: 1.2rem;
 }
+.onHover:hover {
+    background-color: rgb(228, 228, 228);
+}
+.onHover {
+    cursor: pointer;
+}
 .skillarea{
     font-size:1.5em;
     margin: 0 0 20px;
@@ -60,7 +66,7 @@ display:inline-block;
     fill: #e6e6e6;
     position:absolute;
     bottom:15px;
-    right: 15px;
+    right: 15px;    
     width:34%;
     max-width:90px;
     height: auto;
@@ -76,6 +82,14 @@ display:inline-block;
     font-size:3.6em;
     height:200px;
     font-family: Arial,Helvetica,sans-serif;
+}
+.skillButton{
+    font-size: 24px;
+    font-family: Consolas;
+    color: #028ebd;
+    position: absolute;
+    border: 3px solid #028ebd;
+    padding: 2px 5px;
 }
 
 @media screen and (max-width: 480px){
